@@ -253,4 +253,24 @@
   </plugin>
 </gazebo>
 
+  <!-- LEFT WHEEL MOTOR -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-controller-system"
+        name="gz::sim::systems::JointController">
+      <joint_name>left_wheel_joint</joint_name>
+      <initial_velocity>0.0</initial_velocity>
+      <topic>left_wheel_rpm</topic>
+    </plugin>
+  </gazebo>
+
+  <!-- RIGHT WHEEL MOTOR -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-controller-system"
+        name="gz::sim::systems::JointController">
+      <joint_name>right_wheel_joint</joint_name>
+      <initial_velocity>0.0</initial_velocity>
+      <topic>right_wheel_rpm</topic>
+    </plugin>
+  </gazebo>
+
 </robot>

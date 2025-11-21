@@ -20,6 +20,17 @@ find_package(std_msgs REQUIRED)
 add_executable(frame_id_converter_node scripts/frame_id_converter.cpp)
 ament_target_dependencies(frame_id_converter_node rclcpp sensor_msgs)
 
+
+ament_target_dependencies(frame_id_converter_node
+  rclcpp
+  nav_msgs
+  sensor_msgs
+  std_srvs
+  tf2
+  tf2_ros
+  geometry_msgs
+)
+
 install(
   DIRECTORY src launch rviz config world scripts
   DESTINATION share/${PROJECT_NAME}

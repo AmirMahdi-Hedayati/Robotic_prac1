@@ -1,0 +1,37 @@
+[0.008s] Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description -- -j20 -l20
+[0.048s] [100%] Built target frame_id_converter_node
+[0.058s] Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description -- -j20 -l20
+[0.069s] Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description
+[0.076s] -- Install configuration: ""
+[0.076s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/src
+[0.076s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/src/description
+[0.076s] -- Installing: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/src/description/robot.urdf
+[0.076s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/launch
+[0.076s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/launch/display.launch.py
+[0.076s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/launch/gazebo.launch.py
+[0.076s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/rviz
+[0.076s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/rviz/display.rviz
+[0.076s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/config
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/config/gz_bridge.yaml
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/world
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/world/depot.sdf
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/world/test.sdf
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/scripts
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/scripts/frame_id_converter.cpp
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/lib/prac1_robot_description/frame_id_converter_node
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/ament_index/resource_index/package_run_dependencies/prac1_robot_description
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/ament_index/resource_index/parent_prefix_path/prac1_robot_description
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/environment/ament_prefix_path.sh
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/environment/ament_prefix_path.dsv
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/environment/path.sh
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/environment/path.dsv
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/local_setup.bash
+[0.077s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/local_setup.sh
+[0.078s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/local_setup.zsh
+[0.078s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/local_setup.dsv
+[0.078s] -- Installing: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.dsv
+[0.078s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/ament_index/resource_index/packages/prac1_robot_description
+[0.078s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/cmake/prac1_robot_descriptionConfig.cmake
+[0.078s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/cmake/prac1_robot_descriptionConfig-version.cmake
+[0.078s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.xml
+[0.079s] Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description

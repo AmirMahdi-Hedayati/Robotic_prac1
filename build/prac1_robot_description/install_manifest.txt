@@ -1,7 +1,9 @@
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/src/description/robot.urdf
+/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/src/robot2.urdf
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/launch/display.launch.py
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/launch/gazebo.launch.py
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/rviz/display.rviz
+/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/rviz/gazebo.rviz
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/config/gz_bridge.yaml
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/world/depot.sdf
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/world/test.sdf

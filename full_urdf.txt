@@ -1,0 +1,2 @@
+data: "<?xml version=\"1.0\"?>\n<robot name=\"diff_drive_robot\">\n\n  <!-- base -->\n  <link name=\"base_link\">\n    <inertial>\n      <origin xy..."
+---

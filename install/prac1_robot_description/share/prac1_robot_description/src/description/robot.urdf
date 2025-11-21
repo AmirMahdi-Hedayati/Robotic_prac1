@@ -2,6 +2,8 @@
 <robot name="diff_drive_robot">
 
   <!-- base -->
+   <link name="base_footprint"/>
+
   <link name="base_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -28,54 +30,16 @@
     </collision>
   </link>
 
-  <link name="base_footprint"/>
 
-<joint name="base_footprint_joint" type="fixed">
-  <parent link="base_footprint"/>
-  <child link="base_link"/>
-  <origin xyz="0 0 0"/>
-</joint>
+ <joint name="base_footprint_joint" type="fixed">
+   <parent link="base_footprint"/>
+   <child link="base_link"/>
+   <origin xyz="0 0 0"/>
+ </joint>
 
 
   <!-- LEFT WHEEL -->
   <link name="left_wheel_link">
-    <inertial>
-      <origin xyz="0 0 0"/>
-      <mass value="1.0"/>
-      <inertia ixx="0.01" ixy="0" ixz="0"
-               iyy="0.01" iyz="0" izz="0.01"/>
-    </inertial>
-
-    <visual>
-      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.1"/>
-      </geometry>
-      <material name="black">
-        <color rgba="0.1 0.0 0.1 1.0"/>
-      </material>
-    </visual>
-
-    <collision>
-      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
-      <geometry>
-        <cylinder radius="0.1" length="0.1"/>
-      </geometry>
-    </collision>
-  </link>
-
-
-<joint name="left_wheel_joint" type="continuous">
-  <parent link="base_link"/>
-  <child link="left_wheel_link"/>
-  <origin xyz="0 0.25 0.1"/>
-  <axis xyz="0 1 0"/>
-  <limit effort="10.0" velocity="10.0"/>
-</joint>
-
-
-  <!-- RIGHT WHEEL -->
-  <link name="right_wheel_link">
     <inertial>
       <origin xyz="0 0 0"/>
       <mass value="1.0"/>
@@ -102,10 +66,48 @@
   </link>
 
 
+<joint name="left_wheel_joint" type="continuous">
+  <parent link="base_footprint"/>
+  <child link="left_wheel_link"/>
+  <origin xyz="0 0.25 0.1" rpy="0 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="10.0" velocity="10.0"/>
+</joint>
+
+
+  <!-- RIGHT WHEEL -->
+  <link name="right_wheel_link">
+    <inertial>
+      <origin xyz="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0"
+               iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+
+
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.1"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+
 <joint name="right_wheel_joint" type="continuous">
-  <parent link="base_link"/>
+  <parent link="base_footprint"/>
   <child link="right_wheel_link"/>
-  <origin xyz="0 -0.25 0.1"/>
+  <origin xyz="0 -0.25 0.1" rpy="0 0 0"/>
   <axis xyz="0 1 0"/>
   <limit effort="10.0" velocity="10.0"/>
 </joint>
@@ -241,5 +243,14 @@
     </sensor>
   </gazebo>
 
+  <gazebo>
+  <plugin filename="gz-sim-joint-state-publisher-system"
+          name="gz::sim::systems::JointStatePublisher">
+    <topic>joint_states</topic>
+
+    <joint_name>left_wheel_joint</joint_name>
+    <joint_name>right_wheel_joint</joint_name>
+  </plugin>
+</gazebo>
 
 </robot>

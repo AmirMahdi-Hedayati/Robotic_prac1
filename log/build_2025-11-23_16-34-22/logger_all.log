@@ -1,0 +1,199 @@
+[0.059s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.059s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x770c6855d660>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x770c686d6cb0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x770c686d6cb0>>, mixin_verb=('build',))
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.136s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.136s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/amirmahdi/Mothari_robotics/Robotic_prac1'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.136s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extensions ['ignore', 'ignore_ament_install']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extension 'ignore'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extension 'ignore_ament_install'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extensions ['colcon_pkg']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extension 'colcon_pkg'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extensions ['colcon_meta']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extension 'colcon_meta'
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extensions ['ros']
+[0.142s] Level 1:colcon.colcon_core.package_identification:_identify(prac1_robot_description) by extension 'ros'
+[0.144s] DEBUG:colcon.colcon_core.package_identification:Package 'prac1_robot_description' with type 'ros.ament_cmake' and name 'prac1_robot_description'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extensions ['ignore', 'ignore_ament_install']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extension 'ignore'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extension 'ignore_ament_install'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extensions ['colcon_pkg']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extension 'colcon_pkg'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extensions ['colcon_meta']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extension 'colcon_meta'
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extensions ['ros']
+[0.144s] Level 1:colcon.colcon_core.package_identification:_identify(robot_estimation) by extension 'ros'
+[0.144s] DEBUG:colcon.colcon_core.package_identification:Package 'robot_estimation' with type 'ros.ament_cmake' and name 'robot_estimation'
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.144s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.160s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.160s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.160s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.160s] WARNING:colcon.colcon_ros.prefix_path.ament:The path '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description' in the environment variable AMENT_PREFIX_PATH doesn't exist
+[0.160s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.160s] WARNING:colcon.colcon_ros.prefix_path.catkin:The path '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description' in the environment variable CMAKE_PREFIX_PATH doesn't exist
+[0.160s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 0 installed packages in /home/amirmahdi/Mothari_robotics/Robotic_prac1/install
+[0.161s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 280 installed packages in /opt/ros/humble
+[0.162s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'cmake_target' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'prac1_robot_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.179s] DEBUG:colcon.colcon_core.verb:Building package 'prac1_robot_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description', 'merge_install': False, 'path': '/home/amirmahdi/Mothari_robotics/Robotic_prac1/prac1_robot_description', 'symlink_install': False, 'test_result_base': None}
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'cmake_target' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'cmake_clean_first' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'cmake_force_configure' from command line to 'False'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'ament_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.179s] Level 5:colcon.colcon_core.verb:set package 'robot_estimation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.179s] DEBUG:colcon.colcon_core.verb:Building package 'robot_estimation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation', 'merge_install': False, 'path': '/home/amirmahdi/Mothari_robotics/Robotic_prac1/robot_estimation', 'symlink_install': False, 'test_result_base': None}
+[0.179s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.180s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.180s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/prac1_robot_description' with build type 'ament_cmake'
+[0.180s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/prac1_robot_description'
+[0.181s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.181s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.181s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.183s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/robot_estimation' with build type 'ament_cmake'
+[0.183s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/robot_estimation'
+[0.183s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.183s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.186s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/amirmahdi/Mothari_robotics/Robotic_prac1/prac1_robot_description -DCMAKE_INSTALL_PREFIX=/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description
+[0.188s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/amirmahdi/Mothari_robotics/Robotic_prac1/robot_estimation -DCMAKE_INSTALL_PREFIX=/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation
+[0.954s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/amirmahdi/Mothari_robotics/Robotic_prac1/robot_estimation -DCMAKE_INSTALL_PREFIX=/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation
+[0.956s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation -- -j20 -l20
+[0.957s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/amirmahdi/Mothari_robotics/Robotic_prac1/prac1_robot_description -DCMAKE_INSTALL_PREFIX=/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description
+[0.958s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description -- -j20 -l20
+[6.593s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description -- -j20 -l20
+[6.601s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description
+[6.613s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(prac1_robot_description)
+[6.614s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/prac1_robot_description
+[6.616s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description' for CMake module files
+[6.616s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description' for CMake config files
+[6.616s] Level 1:colcon.colcon_core.shell:create_environment_hook('prac1_robot_description', 'cmake_prefix_path')
+[6.617s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/hook/cmake_prefix_path.ps1'
+[6.617s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/hook/cmake_prefix_path.dsv'
+[6.617s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/hook/cmake_prefix_path.sh'
+[6.618s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/lib'
+[6.618s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/bin'
+[6.618s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/lib/pkgconfig/prac1_robot_description.pc'
+[6.619s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/lib/python3.10/site-packages'
+[6.619s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/bin'
+[6.619s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.ps1'
+[6.620s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.dsv'
+[6.620s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.sh'
+[6.620s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.bash'
+[6.621s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.zsh'
+[6.621s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/colcon-core/packages/prac1_robot_description)
+[6.621s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(prac1_robot_description)
+[6.621s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description' for CMake module files
+[6.622s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description' for CMake config files
+[6.622s] Level 1:colcon.colcon_core.shell:create_environment_hook('prac1_robot_description', 'cmake_prefix_path')
+[6.622s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/hook/cmake_prefix_path.ps1'
+[6.622s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/hook/cmake_prefix_path.dsv'
+[6.622s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/hook/cmake_prefix_path.sh'
+[6.622s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/lib'
+[6.623s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/bin'
+[6.623s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/lib/pkgconfig/prac1_robot_description.pc'
+[6.623s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/lib/python3.10/site-packages'
+[6.623s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/bin'
+[6.623s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.ps1'
+[6.623s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.dsv'
+[6.623s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.sh'
+[6.624s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.bash'
+[6.624s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/prac1_robot_description/package.zsh'
+[6.624s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/prac1_robot_description/share/colcon-core/packages/prac1_robot_description)
+[8.069s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation -- -j20 -l20
+[8.070s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation
+[8.086s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_estimation)
+[8.086s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation
+[8.086s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation' for CMake module files
+[8.087s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation' for CMake config files
+[8.087s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_estimation', 'cmake_prefix_path')
+[8.087s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/hook/cmake_prefix_path.ps1'
+[8.087s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/hook/cmake_prefix_path.dsv'
+[8.088s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/hook/cmake_prefix_path.sh'
+[8.088s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib'
+[8.088s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/bin'
+[8.088s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/pkgconfig/robot_estimation.pc'
+[8.088s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/python3.10/site-packages'
+[8.089s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/bin'
+[8.089s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.ps1'
+[8.089s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.dsv'
+[8.090s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.sh'
+[8.090s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.bash'
+[8.090s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.zsh'
+[8.090s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/colcon-core/packages/robot_estimation)
+[8.091s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_estimation)
+[8.091s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation' for CMake module files
+[8.091s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation' for CMake config files
+[8.091s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_estimation', 'cmake_prefix_path')
+[8.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/hook/cmake_prefix_path.ps1'
+[8.091s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/hook/cmake_prefix_path.dsv'
+[8.091s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/hook/cmake_prefix_path.sh'
+[8.092s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib'
+[8.092s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/bin'
+[8.092s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/pkgconfig/robot_estimation.pc'
+[8.092s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/python3.10/site-packages'
+[8.092s] Level 1:colcon.colcon_core.environment:checking '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/bin'
+[8.092s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.ps1'
+[8.092s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.dsv'
+[8.093s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.sh'
+[8.093s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.bash'
+[8.093s] INFO:colcon.colcon_core.shell:Creating package script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.zsh'
+[8.093s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/colcon-core/packages/robot_estimation)
+[8.093s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[8.093s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[8.093s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[8.093s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[8.096s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[8.096s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[8.096s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[8.103s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[8.103s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/local_setup.ps1'
+[8.104s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/_local_setup_util_ps1.py'
+[8.105s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/setup.ps1'
+[8.105s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/local_setup.sh'
+[8.105s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/_local_setup_util_sh.py'
+[8.106s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/setup.sh'
+[8.106s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/local_setup.bash'
+[8.106s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/setup.bash'
+[8.107s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/local_setup.zsh'
+[8.107s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/setup.zsh'

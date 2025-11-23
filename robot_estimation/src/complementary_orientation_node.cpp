@@ -1,7 +1,8 @@
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/imu.hpp>
 #include <nav_msgs/msg/odometry.hpp>
-#include <std_msgs/msg/float64.hpp>
+#include <geometry_msgs/msg/pose_stamped.hpp>
+
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2/LinearMath/Matrix3x3.h>
 #include <cmath>
@@ -11,8 +12,10 @@ class ComplementaryOrientation : public rclcpp::Node
 public:
     ComplementaryOrientation() : Node("complementary_orientation")
     {
+        // Parameter for complementary filter weight
         alpha_ = declare_parameter<double>("alpha", 0.98);
 
+        // Subscribers
         sub_imu_ = create_subscription<sensor_msgs::msg::Imu>(
             "/imu_corrected",
             rclcpp::SensorDataQoS(),
@@ -20,13 +23,14 @@ public:
         );
 
         sub_odom_ = create_subscription<nav_msgs::msg::Odometry>(
-            "/wheel_encoder/odom",   // اگر تاپیکت چیز دیگری است، فقط اینجا عوض کن
+            "/wheel_encoder/odom",
             rclcpp::SensorDataQoS(),
             std::bind(&ComplementaryOrientation::odomCallback, this, std::placeholders::_1)
         );
 
+        // Publisher: now publishing PoseStamped instead of Float64
         pub_orientation_ =
-            create_publisher<std_msgs::msg::Float64>("/estimation/orientation", 10);
+            create_publisher<geometry_msgs::msg::PoseStamped>("/estimation/orientation", 10);
 
         last_time_ = now();
     }
@@ -40,7 +44,7 @@ private:
 
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_imu_;
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_odom_;
-    rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr pub_orientation_;
+    rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr pub_orientation_;
 
     // -------- Odometry Callback --------
     void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
@@ -66,22 +70,32 @@ private:
 
         // 1) Predict from gyro
         double yaw_gyro = fused_yaw_ + gyro_z * dt;
-
-        // Normalize:
         yaw_gyro = normalizeAngle(yaw_gyro);
 
-        // 2) Fuse with odometry
-        fused_yaw_ =
-            alpha_ * yaw_gyro +
-            (1.0 - alpha_) * odom_yaw_;
-
+        // 2) Fuse with odometry yaw
+        fused_yaw_ = alpha_ * yaw_gyro + (1.0 - alpha_) * odom_yaw_;
         fused_yaw_ = normalizeAngle(fused_yaw_);
 
-        // 3) Publish result
-        std_msgs::msg::Float64 msg_out;
-        msg_out.data = fused_yaw_;
+        // -------- 🟢 Publish final PoseStamped --------
+        tf2::Quaternion q;
+        q.setRPY(0.0, 0.0, fused_yaw_);
 
-        pub_orientation_->publish(msg_out);
+        geometry_msgs::msg::PoseStamped pose_msg;
+        pose_msg.header.stamp = current_time;
+        pose_msg.header.frame_id = "base_link";   // یا "odom" یا "map"
+
+        // چون پوزیشن نداریم
+        pose_msg.pose.position.x = 0.0;
+        pose_msg.pose.position.y = 0.0;
+        pose_msg.pose.position.z = 0.0;
+
+        // فقط orientation اهمیت دارد
+        pose_msg.pose.orientation.x = q.x();
+        pose_msg.pose.orientation.y = q.y();
+        pose_msg.pose.orientation.z = q.z();
+        pose_msg.pose.orientation.w = q.w();
+
+        pub_orientation_->publish(pose_msg);
     }
 
     // Keep angle in [-pi, pi]

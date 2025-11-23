@@ -1,0 +1,124 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-62b419884dbeb18a13c2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "robot_estimation",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cmd_vel_to_rpm::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cmd_vel_to_rpm-ef928847c02388266465.json",
+					"name" : "cmd_vel_to_rpm",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "complementary_orientation_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-complementary_orientation_node-a9c80994120f2b35cba4.json",
+					"name" : "complementary_orientation_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "imu_bias_correction_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-imu_bias_correction_node-9c71332b650391a9cbeb.json",
+					"name" : "imu_bias_correction_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "lowpass_imu_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-lowpass_imu_node-838e34a1dec0427b8b1a.json",
+					"name" : "lowpass_imu_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "motor_rpm_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-motor_rpm_node-4847a3a5bce6e2f96c93.json",
+					"name" : "motor_rpm_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "robot_estimation_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-robot_estimation_uninstall-6177fa895c3e26ca3228.json",
+					"name" : "robot_estimation_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-ab302ff70257b26094a8.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "wheel_odometry_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-wheel_odometry_node-1b8f35f2a8da5e3bdf87.json",
+					"name" : "wheel_odometry_node",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation",
+		"source" : "/home/amirmahdi/Mothari_robotics/Robotic_prac1/robot_estimation"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

@@ -12,7 +12,7 @@ public:
     WheelOdometryNode() : Node("wheel_odometry")
     {
         wheel_radius_ = declare_parameter<double>("wheel_radius", 0.1);
-        wheel_base_   = declare_parameter<double>("wheel_base", 0.5);
+        wheel_base_   = declare_parameter<double>("wheel_base", 0.7);
 
         frame_id_       = declare_parameter<std::string>("frame_id", "odom");
         child_frame_id_ = declare_parameter<std::string>("child_frame_id", "base_link");

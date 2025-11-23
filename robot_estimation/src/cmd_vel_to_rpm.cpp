@@ -10,7 +10,7 @@ public:
     {
         // Declare robot parameters
         wheel_radius_ = declare_parameter<double>("wheel_radius", 0.1);
-        wheel_separation_ = declare_parameter<double>("wheel_separation", 0.5);
+        wheel_separation_ = declare_parameter<double>("wheel_separation", 0.7);
 
         // Publishers
         left_pub_  = create_publisher<std_msgs::msg::Float64>("/left_wheel_rpm", 10);

@@ -17,11 +17,11 @@ find_package(Eigen3 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(std_msgs REQUIRED)
 
-add_executable(frame_id_converter_node scripts/frame_id_converter.cpp)
-ament_target_dependencies(frame_id_converter_node rclcpp sensor_msgs)
+add_executable(laser_scan_frame_id_converter_node scripts/frame_id_converter.cpp)
+ament_target_dependencies(laser_scan_frame_id_converter_node rclcpp sensor_msgs)
 
 
-ament_target_dependencies(frame_id_converter_node
+ament_target_dependencies(laser_scan_frame_id_converter_node
   rclcpp
   nav_msgs
   sensor_msgs
@@ -38,7 +38,7 @@ install(
 
 install(
     TARGETS 
-    frame_id_converter_node
+    laser_scan_frame_id_converter_node
     DESTINATION lib/${PROJECT_NAME}
 )
 

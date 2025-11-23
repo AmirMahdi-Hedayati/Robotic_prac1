@@ -84,10 +84,10 @@ def generate_launch_description():
         output='screen'
     )   
 
-    frame_id_converter_node = Node(
+    laser_scan_frame_id_converter_node = Node(
         package='prac1_robot_description',
-        executable='frame_id_converter_node',
-        name='frame_id_converter_node',
+        executable='laser_scan_frame_id_converter_node',
+        name='laser_scan_frame_id_converter_node',
         output='screen',
         parameters=[{'use_sim_time': True}]
     )
@@ -109,6 +109,6 @@ def generate_launch_description():
         start_robot_state_publisher_cmd,
         spawn_entity,
         rviz_node,
-        frame_id_converter_node, 
+        laser_scan_frame_id_converter_node, 
         # ekf_diff_imu_node,
     ])

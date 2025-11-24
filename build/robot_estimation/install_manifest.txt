@@ -1,9 +1,9 @@
+/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/imu_motion_odom_node
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/imu_bias_correction_node
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/lowpass_imu_node
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/complementary_orientation_node
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/motor_rpm_node
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/cmd_vel_to_rpm
-/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/wheel_odometry_node
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/launch/estimation.launch.py
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/ament_index/resource_index/package_run_dependencies/robot_estimation
 /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/ament_index/resource_index/parent_prefix_path/robot_estimation

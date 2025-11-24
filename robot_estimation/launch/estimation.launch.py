@@ -71,23 +71,25 @@ def generate_launch_description():
             ]
         ),
 
-        # 5. Wheel odometry
+        #5. IMU-based odometry (motion model)
         Node(
             package="robot_estimation",
-            executable="wheel_odometry_node",
-            name="wheel_odometry",
+            executable="imu_motion_odom_node",
+            name="imu_motion_odom",
             parameters=[
                 {
-                    "wheel_radius": 0.1,
-                    "wheel_base": 0.5,
-                    "frame_id": "odom",
-                    "child_frame_id": "base_link"
+                    "imu_topic": "/imu_corrected",
+                    "orientation_topic": "/estimation/orientation",
+                    "odom_topic": "/imu_motion/odom",
+                    "odom_frame_id": "odom",
+                    "base_frame_id": "base_link"
                 }
             ],
             remappings=[
-                ("/left_wheel_rpm", "/left_wheel_rpm"),
-                ("/right_wheel_rpm", "/right_wheel_rpm")
+                ("/imu_corrected", "/imu_corrected"),
+                ("/estimation/orientation", "/estimation/orientation")
             ]
         ),
+
 
     ])

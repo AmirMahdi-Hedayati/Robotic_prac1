@@ -14,6 +14,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 # Lowpass IMU node
 add_executable(lowpass_imu_node src/lowpass_imu_node.cpp)
@@ -48,10 +49,24 @@ ament_target_dependencies(motor_rpm_node
 add_executable(cmd_vel_to_rpm src/cmd_vel_to_rpm.cpp)
 ament_target_dependencies(cmd_vel_to_rpm rclcpp geometry_msgs std_msgs)
 
-add_executable(wheel_odometry_node src/wheel_odometry_node.cpp)
-ament_target_dependencies(wheel_odometry_node
-    rclcpp std_msgs nav_msgs geometry_msgs tf2 tf2_ros
+
+add_executable(imu_motion_odom_node src/imu_motion_odom_node.cpp)
+ament_target_dependencies(imu_motion_odom_node
+  rclcpp
+  sensor_msgs
+  geometry_msgs
+  nav_msgs
+  tf2
+  tf2_ros
+  tf2_geometry_msgs
 )
+
+
+install(TARGETS
+  imu_motion_odom_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 
 install(TARGETS
   imu_bias_correction_node
@@ -59,7 +74,6 @@ install(TARGETS
   complementary_orientation_node
   motor_rpm_node
   cmd_vel_to_rpm
-  wheel_odometry_node
   DESTINATION lib/${PROJECT_NAME})
 
   install(

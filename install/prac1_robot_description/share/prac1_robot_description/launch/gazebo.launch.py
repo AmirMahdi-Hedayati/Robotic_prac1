@@ -58,7 +58,6 @@ def generate_launch_description():
         launch_arguments={"gz_args": ["-r -v 4 ", world]}.items(),
     )
 
-    # ❌ این خط حذف شد (publish_tf:=false کار نمی‌کند و اثر ندارد!)
     spawn_entity = Node(
         package="ros_gz_sim",
         executable="create",
@@ -74,13 +73,6 @@ def generate_launch_description():
             "-z",
             "0.9",
         ],
-        output="screen",
-    )
-
-    world_to_odom = Node(
-        package="tf2_ros",
-        executable="static_transform_publisher",
-        arguments=["0", "0", "0", "0", "0", "0", "world", "odom"],
         output="screen",
     )
 
@@ -100,17 +92,23 @@ def generate_launch_description():
         parameters=[{'use_sim_time': True}]
     )
     
+    # ekf_diff_imu_node = Node(
+    #     package='prac1_robot_description',
+    #     executable='ekf_diff_imu_node',
+    #     name='ekf_diff_imu_node',
+    #     output='screen',
+    #     parameters=[{'use_sim_time': True}]
+    # )
 
     return LaunchDescription([
         DeclareLaunchArgument('use_sim_time',default_value='True',description='Use sim time if true'),
         DeclareLaunchArgument('urdf_file',default_value=os.path.join(bringup_dir, 'src', 'description', 'robot.urdf'),description='Whether to start RVIZ'),
         DeclareLaunchArgument('use_robot_state_pub',default_value='True',description='Whether to start the robot state publisher'),
         gz_resource_path,
-        gz_sim,
-        bridge,
+        gz_sim,bridge,
         start_robot_state_publisher_cmd,
         spawn_entity,
-        world_to_odom,          
         rviz_node,
-        laser_scan_frame_id_converter_node,
+        laser_scan_frame_id_converter_node, 
+        # ekf_diff_imu_node,
     ])

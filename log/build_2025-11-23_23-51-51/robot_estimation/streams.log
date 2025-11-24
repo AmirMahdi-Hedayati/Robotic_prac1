@@ -1,0 +1,38 @@
+[0.007s] Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation -- -j20 -l20
+[0.044s] [35m[1mConsolidate compiler generated dependencies of target imu_motion_odom_node[0m
+[0.054s] [ 33%] Built target cmd_vel_to_rpm
+[0.054s] [ 33%] Built target motor_rpm_node
+[0.055s] [ 50%] Built target imu_bias_correction_node
+[0.057s] [ 66%] Built target complementary_orientation_node
+[0.057s] [ 91%] Built target lowpass_imu_node
+[0.057s] [ 91%] [32mBuilding CXX object CMakeFiles/imu_motion_odom_node.dir/src/imu_motion_odom_node.cpp.o[0m
+[7.452s] [100%] [32m[1mLinking CXX executable imu_motion_odom_node[0m
+[7.852s] [100%] Built target imu_motion_odom_node
+[7.860s] Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation -- -j20 -l20
+[7.861s] Invoking command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation
+[7.868s] -- Install configuration: ""
+[7.868s] -- Installing: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/imu_motion_odom_node
+[7.871s] -- Set runtime path of "/home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/imu_motion_odom_node" to ""
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/imu_bias_correction_node
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/lowpass_imu_node
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/complementary_orientation_node
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/motor_rpm_node
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/lib/robot_estimation/cmd_vel_to_rpm
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/launch
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/launch/estimation.launch.py
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/ament_index/resource_index/package_run_dependencies/robot_estimation
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/ament_index/resource_index/parent_prefix_path/robot_estimation
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/environment/ament_prefix_path.sh
+[7.872s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/environment/ament_prefix_path.dsv
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/environment/path.sh
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/environment/path.dsv
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/local_setup.bash
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/local_setup.sh
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/local_setup.zsh
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/local_setup.dsv
+[7.873s] -- Installing: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.dsv
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/ament_index/resource_index/packages/robot_estimation
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/cmake/robot_estimationConfig.cmake
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/cmake/robot_estimationConfig-version.cmake
+[7.873s] -- Up-to-date: /home/amirmahdi/Mothari_robotics/Robotic_prac1/install/robot_estimation/share/robot_estimation/package.xml
+[7.875s] Invoked command in '/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation

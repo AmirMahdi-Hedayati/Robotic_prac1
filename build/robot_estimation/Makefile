@@ -263,17 +263,17 @@ cmd_vel_to_rpm/fast:
 .PHONY : cmd_vel_to_rpm/fast
 
 #=============================================================================
-# Target rules for targets named wheel_odometry_node
+# Target rules for targets named imu_motion_odom_node
 
 # Build rule for target.
-wheel_odometry_node: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 wheel_odometry_node
-.PHONY : wheel_odometry_node
+imu_motion_odom_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 imu_motion_odom_node
+.PHONY : imu_motion_odom_node
 
 # fast build rule for target.
-wheel_odometry_node/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wheel_odometry_node.dir/build.make CMakeFiles/wheel_odometry_node.dir/build
-.PHONY : wheel_odometry_node/fast
+imu_motion_odom_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_motion_odom_node.dir/build.make CMakeFiles/imu_motion_odom_node.dir/build
+.PHONY : imu_motion_odom_node/fast
 
 src/cmd_vel_to_rpm.o: src/cmd_vel_to_rpm.cpp.o
 .PHONY : src/cmd_vel_to_rpm.o
@@ -347,6 +347,30 @@ src/imu_bias_correction_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_bias_correction_node.dir/build.make CMakeFiles/imu_bias_correction_node.dir/src/imu_bias_correction_node.cpp.s
 .PHONY : src/imu_bias_correction_node.cpp.s
 
+src/imu_motion_odom_node.o: src/imu_motion_odom_node.cpp.o
+.PHONY : src/imu_motion_odom_node.o
+
+# target to build an object file
+src/imu_motion_odom_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_motion_odom_node.dir/build.make CMakeFiles/imu_motion_odom_node.dir/src/imu_motion_odom_node.cpp.o
+.PHONY : src/imu_motion_odom_node.cpp.o
+
+src/imu_motion_odom_node.i: src/imu_motion_odom_node.cpp.i
+.PHONY : src/imu_motion_odom_node.i
+
+# target to preprocess a source file
+src/imu_motion_odom_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_motion_odom_node.dir/build.make CMakeFiles/imu_motion_odom_node.dir/src/imu_motion_odom_node.cpp.i
+.PHONY : src/imu_motion_odom_node.cpp.i
+
+src/imu_motion_odom_node.s: src/imu_motion_odom_node.cpp.s
+.PHONY : src/imu_motion_odom_node.s
+
+# target to generate assembly for a file
+src/imu_motion_odom_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_motion_odom_node.dir/build.make CMakeFiles/imu_motion_odom_node.dir/src/imu_motion_odom_node.cpp.s
+.PHONY : src/imu_motion_odom_node.cpp.s
+
 src/lowpass_imu_node.o: src/lowpass_imu_node.cpp.o
 .PHONY : src/lowpass_imu_node.o
 
@@ -395,30 +419,6 @@ src/motor_rpm_node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_rpm_node.dir/build.make CMakeFiles/motor_rpm_node.dir/src/motor_rpm_node.cpp.s
 .PHONY : src/motor_rpm_node.cpp.s
 
-src/wheel_odometry_node.o: src/wheel_odometry_node.cpp.o
-.PHONY : src/wheel_odometry_node.o
-
-# target to build an object file
-src/wheel_odometry_node.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wheel_odometry_node.dir/build.make CMakeFiles/wheel_odometry_node.dir/src/wheel_odometry_node.cpp.o
-.PHONY : src/wheel_odometry_node.cpp.o
-
-src/wheel_odometry_node.i: src/wheel_odometry_node.cpp.i
-.PHONY : src/wheel_odometry_node.i
-
-# target to preprocess a source file
-src/wheel_odometry_node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wheel_odometry_node.dir/build.make CMakeFiles/wheel_odometry_node.dir/src/wheel_odometry_node.cpp.i
-.PHONY : src/wheel_odometry_node.cpp.i
-
-src/wheel_odometry_node.s: src/wheel_odometry_node.cpp.s
-.PHONY : src/wheel_odometry_node.s
-
-# target to generate assembly for a file
-src/wheel_odometry_node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wheel_odometry_node.dir/build.make CMakeFiles/wheel_odometry_node.dir/src/wheel_odometry_node.cpp.s
-.PHONY : src/wheel_odometry_node.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -437,9 +437,9 @@ help:
 	@echo "... cmd_vel_to_rpm"
 	@echo "... complementary_orientation_node"
 	@echo "... imu_bias_correction_node"
+	@echo "... imu_motion_odom_node"
 	@echo "... lowpass_imu_node"
 	@echo "... motor_rpm_node"
-	@echo "... wheel_odometry_node"
 	@echo "... src/cmd_vel_to_rpm.o"
 	@echo "... src/cmd_vel_to_rpm.i"
 	@echo "... src/cmd_vel_to_rpm.s"
@@ -449,15 +449,15 @@ help:
 	@echo "... src/imu_bias_correction_node.o"
 	@echo "... src/imu_bias_correction_node.i"
 	@echo "... src/imu_bias_correction_node.s"
+	@echo "... src/imu_motion_odom_node.o"
+	@echo "... src/imu_motion_odom_node.i"
+	@echo "... src/imu_motion_odom_node.s"
 	@echo "... src/lowpass_imu_node.o"
 	@echo "... src/lowpass_imu_node.i"
 	@echo "... src/lowpass_imu_node.s"
 	@echo "... src/motor_rpm_node.o"
 	@echo "... src/motor_rpm_node.i"
 	@echo "... src/motor_rpm_node.s"
-	@echo "... src/wheel_odometry_node.o"
-	@echo "... src/wheel_odometry_node.i"
-	@echo "... src/wheel_odometry_node.s"
 .PHONY : help
 
 

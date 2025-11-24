@@ -1,116 +1,125 @@
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/imu.hpp>
-#include <nav_msgs/msg/odometry.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
 
 #include <tf2/LinearMath/Quaternion.h>
-#include <tf2/LinearMath/Matrix3x3.h>
 #include <cmath>
 
-class ComplementaryOrientation : public rclcpp::Node
+class ComplementaryIMU : public rclcpp::Node
 {
 public:
-    ComplementaryOrientation() : Node("complementary_orientation")
+    ComplementaryIMU() : Node("complementary_imu")
     {
-        // Parameter for complementary filter weight
         alpha_ = declare_parameter<double>("alpha", 0.98);
 
-        // Subscribers
         sub_imu_ = create_subscription<sensor_msgs::msg::Imu>(
             "/imu_corrected",
             rclcpp::SensorDataQoS(),
-            std::bind(&ComplementaryOrientation::imuCallback, this, std::placeholders::_1)
-        );
+            std::bind(&ComplementaryIMU::imuCallback, this, std::placeholders::_1));
 
-        sub_odom_ = create_subscription<nav_msgs::msg::Odometry>(
-            "/wheel_encoder/odom",
-            rclcpp::SensorDataQoS(),
-            std::bind(&ComplementaryOrientation::odomCallback, this, std::placeholders::_1)
-        );
+        pub_pose_ = create_publisher<geometry_msgs::msg::PoseStamped>(
+            "/estimation/orientation", 10);
 
-        // Publisher: now publishing PoseStamped instead of Float64
-        pub_orientation_ =
-            create_publisher<geometry_msgs::msg::PoseStamped>("/estimation/orientation", 10);
+        last_time_ = this->now();
 
-        last_time_ = now();
+        RCLCPP_INFO(get_logger(), "Complementary IMU node started, alpha = %.3f", alpha_);
     }
 
 private:
     double alpha_;
-    double fused_yaw_ = 0.0;
-    double odom_yaw_ = 0.0;
+    double roll_  = 0.0;
+    double pitch_ = 0.0;
+    double yaw_   = 0.0;
 
+    bool first_sample_ = true;
     rclcpp::Time last_time_;
 
     rclcpp::Subscription<sensor_msgs::msg::Imu>::SharedPtr sub_imu_;
-    rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_odom_;
-    rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr pub_orientation_;
+    rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr pub_pose_;
 
-    // -------- Odometry Callback --------
-    void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
-    {
-        const auto &q = msg->pose.pose.orientation;
-        tf2::Quaternion qt(q.x, q.y, q.z, q.w);
-        double roll, pitch, yaw;
-        tf2::Matrix3x3(qt).getRPY(roll, pitch, yaw);
-
-        odom_yaw_ = yaw;
-    }
-
-    // -------- IMU Callback (main update) --------
     void imuCallback(const sensor_msgs::msg::Imu::SharedPtr msg)
     {
-        rclcpp::Time current_time = msg->header.stamp;
-        double dt = (current_time - last_time_).seconds();
-        if (dt <= 0) dt = 0.001;
+        // -------------------- dt --------------------
+        rclcpp::Time now_time = msg->header.stamp;
+        if (now_time.nanoseconds() == 0)
+            now_time = this->now();
 
-        last_time_ = current_time;
+        double dt = (now_time - last_time_).seconds();
+        if (dt <= 0.0 || dt > 0.1)
+            dt = 0.01;
+        last_time_ = now_time;
 
-        double gyro_z = msg->angular_velocity.z;
+        // -------------------- شتاب‌سنج --------------------
+        double ax = msg->linear_acceleration.x;
+        double ay = msg->linear_acceleration.y;
+        double az = msg->linear_acceleration.z;
 
-        // 1) Predict from gyro
-        double yaw_gyro = fused_yaw_ + gyro_z * dt;
-        yaw_gyro = normalizeAngle(yaw_gyro);
+        // نرمال‌سازی بردار شتاب → جهت گرانش
+        double acc_norm = std::sqrt(ax*ax + ay*ay + az*az);
+        if (acc_norm < 1e-6)
+            return; // محافظت از تقسیم بر صفر
 
-        // 2) Fuse with odometry yaw
-        fused_yaw_ = alpha_ * yaw_gyro + (1.0 - alpha_) * odom_yaw_;
-        fused_yaw_ = normalizeAngle(fused_yaw_);
+        double ax_g = ax / acc_norm;
+        double ay_g = ay / acc_norm;
+        double az_g = az / acc_norm;
 
-        // -------- 🟢 Publish final PoseStamped --------
+        // زاویه‌ها از جهت گرانش نرمال‌شده
+        double roll_acc  = std::atan2(ay_g, az_g);
+        double pitch_acc = std::atan2(-ax_g, std::sqrt(ay_g*ay_g + az_g*az_g));
+
+        // -------------------- مقدار اولیه --------------------
+        if (first_sample_)
+        {
+            roll_  = roll_acc;
+            pitch_ = pitch_acc;
+            yaw_   = 0.0;
+            first_sample_ = false;
+        }
+
+        // -------------------- ژایرو + فیلتر مکمل --------------------
+        double gx = msg->angular_velocity.x;
+        double gy = msg->angular_velocity.y;
+        double gz = msg->angular_velocity.z;
+
+        roll_  = alpha_ * (roll_  + gx * dt) + (1.0 - alpha_) * roll_acc;
+        pitch_ = alpha_ * (pitch_ + gy * dt) + (1.0 - alpha_) * pitch_acc;
+        yaw_  += gz * dt;
+
+        normalizeAngle(roll_);
+        normalizeAngle(pitch_);
+        normalizeAngle(yaw_);
+
+        // -------------------- کواترنیون و خروجی --------------------
         tf2::Quaternion q;
-        q.setRPY(0.0, 0.0, fused_yaw_);
+        q.setRPY(roll_, pitch_, yaw_);
 
-        geometry_msgs::msg::PoseStamped pose_msg;
-        pose_msg.header.stamp = current_time;
-        pose_msg.header.frame_id = "base_link";   // یا "odom" یا "map"
+        geometry_msgs::msg::PoseStamped pose;
+        pose.header.stamp = now_time;
+        pose.header.frame_id = "base_link";
 
-        // چون پوزیشن نداریم
-        pose_msg.pose.position.x = 0.0;
-        pose_msg.pose.position.y = 0.0;
-        pose_msg.pose.position.z = 0.0;
+        pose.pose.position.x = 0.0;
+        pose.pose.position.y = 0.0;
+        pose.pose.position.z = 0.0;
 
-        // فقط orientation اهمیت دارد
-        pose_msg.pose.orientation.x = q.x();
-        pose_msg.pose.orientation.y = q.y();
-        pose_msg.pose.orientation.z = q.z();
-        pose_msg.pose.orientation.w = q.w();
+        pose.pose.orientation.x = q.x();
+        pose.pose.orientation.y = q.y();
+        pose.pose.orientation.z = q.z();
+        pose.pose.orientation.w = q.w();
 
-        pub_orientation_->publish(pose_msg);
+        pub_pose_->publish(pose);
     }
 
-    // Keep angle in [-pi, pi]
-    double normalizeAngle(double a)
+    void normalizeAngle(double &a)
     {
-        while (a > M_PI) a -= 2.0 * M_PI;
+        while (a > M_PI)  a -= 2.0 * M_PI;
         while (a < -M_PI) a += 2.0 * M_PI;
-        return a;
     }
 };
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<ComplementaryOrientation>());
+    rclcpp::spin(std::make_shared<ComplementaryIMU>());
     rclcpp::shutdown();
     return 0;
 }

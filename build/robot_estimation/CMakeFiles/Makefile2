@@ -68,7 +68,7 @@ all: CMakeFiles/imu_bias_correction_node.dir/all
 all: CMakeFiles/complementary_orientation_node.dir/all
 all: CMakeFiles/motor_rpm_node.dir/all
 all: CMakeFiles/cmd_vel_to_rpm.dir/all
-all: CMakeFiles/wheel_odometry_node.dir/all
+all: CMakeFiles/imu_motion_odom_node.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -83,7 +83,7 @@ clean: CMakeFiles/imu_bias_correction_node.dir/clean
 clean: CMakeFiles/complementary_orientation_node.dir/clean
 clean: CMakeFiles/motor_rpm_node.dir/clean
 clean: CMakeFiles/cmd_vel_to_rpm.dir/clean
-clean: CMakeFiles/wheel_odometry_node.dir/clean
+clean: CMakeFiles/imu_motion_odom_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -145,7 +145,7 @@ CMakeFiles/robot_estimation_uninstall.dir/clean:
 CMakeFiles/lowpass_imu_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lowpass_imu_node.dir/build.make CMakeFiles/lowpass_imu_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lowpass_imu_node.dir/build.make CMakeFiles/lowpass_imu_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation/CMakeFiles --progress-num=7,8 "Built target lowpass_imu_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation/CMakeFiles --progress-num=9,10 "Built target lowpass_imu_node"
 .PHONY : CMakeFiles/lowpass_imu_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -223,7 +223,7 @@ CMakeFiles/complementary_orientation_node.dir/clean:
 CMakeFiles/motor_rpm_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_rpm_node.dir/build.make CMakeFiles/motor_rpm_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_rpm_node.dir/build.make CMakeFiles/motor_rpm_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation/CMakeFiles --progress-num=9,10 "Built target motor_rpm_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation/CMakeFiles --progress-num=11,12 "Built target motor_rpm_node"
 .PHONY : CMakeFiles/motor_rpm_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -269,30 +269,30 @@ CMakeFiles/cmd_vel_to_rpm.dir/clean:
 .PHONY : CMakeFiles/cmd_vel_to_rpm.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/wheel_odometry_node.dir
+# Target rules for target CMakeFiles/imu_motion_odom_node.dir
 
 # All Build rule for target.
-CMakeFiles/wheel_odometry_node.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wheel_odometry_node.dir/build.make CMakeFiles/wheel_odometry_node.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wheel_odometry_node.dir/build.make CMakeFiles/wheel_odometry_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation/CMakeFiles --progress-num=11,12 "Built target wheel_odometry_node"
-.PHONY : CMakeFiles/wheel_odometry_node.dir/all
+CMakeFiles/imu_motion_odom_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_motion_odom_node.dir/build.make CMakeFiles/imu_motion_odom_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_motion_odom_node.dir/build.make CMakeFiles/imu_motion_odom_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation/CMakeFiles --progress-num=7,8 "Built target imu_motion_odom_node"
+.PHONY : CMakeFiles/imu_motion_odom_node.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/wheel_odometry_node.dir/rule: cmake_check_build_system
+CMakeFiles/imu_motion_odom_node.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/wheel_odometry_node.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/imu_motion_odom_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/amirmahdi/Mothari_robotics/Robotic_prac1/build/robot_estimation/CMakeFiles 0
-.PHONY : CMakeFiles/wheel_odometry_node.dir/rule
+.PHONY : CMakeFiles/imu_motion_odom_node.dir/rule
 
 # Convenience name for target.
-wheel_odometry_node: CMakeFiles/wheel_odometry_node.dir/rule
-.PHONY : wheel_odometry_node
+imu_motion_odom_node: CMakeFiles/imu_motion_odom_node.dir/rule
+.PHONY : imu_motion_odom_node
 
 # clean rule for target.
-CMakeFiles/wheel_odometry_node.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/wheel_odometry_node.dir/build.make CMakeFiles/wheel_odometry_node.dir/clean
-.PHONY : CMakeFiles/wheel_odometry_node.dir/clean
+CMakeFiles/imu_motion_odom_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/imu_motion_odom_node.dir/build.make CMakeFiles/imu_motion_odom_node.dir/clean
+.PHONY : CMakeFiles/imu_motion_odom_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
